@@ -1,24 +1,22 @@
 <!-- Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:5B42F3,100:38BDF8&height=200&section=header&text=%EC%B5%9C%EC%9A%A9%EB%B2%94&fontSize=60&fontColor=ffffff&fontAlignY=40&animation=fadeIn" width="100%" alt="header" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:5B42F3,100:38BDF8&height=160&section=header" width="100%" alt="header" />
 
 <div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2800&pause=900&color=5B42F3&center=true&vCenter=true&width=600&lines=Backend+Developer;Java+%C2%B7+Spring+Boot+%C2%B7+JPA+%C2%B7+MySQL+%C2%B7+Redis" alt="typing" />
 
-  <br/><br/>
-
-  <a href="mailto:dydqja3937@naver.com"><img src="https://img.shields.io/badge/Email-dydqja3937%40naver.com-03C75A?style=for-the-badge&logo=naver&logoColor=white" /></a>
-  <a href="https://github.com/Yong-B"><img src="https://img.shields.io/badge/GitHub-Yong--B-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <img src="https://komarev.com/ghpvc/?username=Yong-B&label=Profile%20Views&color=5B42F3&style=for-the-badge" />
 </div>
 
 <br/>
 
 ## 🙋‍♂️ About Me
 
-- 💳 **결제 · 환불 · 정산** — 포트원 V2 웹훅 검증, 비관적 락으로 동시 결제·환불 요청의 정합성을 맞췄습니다.
-- 📨 **Transactional Outbox** — 구매 확정 이벤트를 주문 상태 변경과 같은 트랜잭션에 저장하고, 릴레이 스케줄러가 Kafka로 발행합니다. ShedLock으로 다중 서버 중복 발행을 막고, Kafka 장애와 이벤트 자체 오류를 나눠 재시도합니다.
-- 🔐 **인증 · 회원 · 리뷰** — 로그인·회원가입, 회원 등급, 상품 리뷰 기능을 구현했습니다.
-- 📝 **문서화** — 팀 개발 문서 구조를 직접 설계하고 운영했습니다.
+안정적인 흐름과 올바른 설계를 지향하는 백엔드 개발자입니다.
+
+- 💳 **결제 · 환불 · 정산** — PG 재조회로 금액·시각을 대조한 뒤 승인하고, 웹훅은 서명 검증과 중복 차단을 거칩니다. 환불은 상품·수량 단위 부분 환불, 정산은 결제 이력 원장 기반 일별 사전 집계로 처리했습니다.
+- 🔒 **동시성** — 비관적 락을 걸었는데도 1차 캐시와 REPEATABLE READ 스냅샷 때문에 예전 상태로 판단하던 문제를, 잠금 조회를 트랜잭션 첫 조회로 두고 flush·refresh로 해결했습니다. (동시 환불 후 재고 16 → 10)
+- 📨 **Transactional Outbox** — 구매 확정과 outbox 저장을 한 트랜잭션에 묶어, 커밋 뒤 Kafka 발행이 실패해도 냉장고 입고 이벤트가 사라지지 않게 했습니다. 소비 실패는 재시도 후 DLT로 보내고, order_item_id UNIQUE로 입고는 한 번만 됩니다.
+- 🔐 **인증 · 회원** — JWT Access/Refresh 발급·재발급과 Refresh Rotation을 구현했고, 결제·환불이 누적 구매금액을 동시에 바꾸는 Lost Update를 회원별 행 잠금으로 막았습니다.
+- ✍️ **Blog** — [atom700.tistory.com](https://atom700.tistory.com)
 
 <br/>
 
@@ -29,14 +27,14 @@
     <td width="33%" valign="top" align="center">
       <a href="https://github.com/Yong-B/take-care-of-my-fridge"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Yong-B&repo=take-care-of-my-fridge&bg_color=30,5B42F3,38BDF8&title_color=ffffff&text_color=ffffff&icon_color=ffffff&hide_border=true&border_radius=12" width="100%" /></a>
       <br/><b>🧊 냉장고를 부탁해</b><br/>
-      <sub>결제 · 환불 · 정산 · Outbox</sub><br/>
-      <sub>비관적 락 · 웹훅 검증 · Kafka</sub>
+      <sub>결제 · 환불 · 정산 · 구매 확정 이벤트</sub><br/>
+      <sub>비관적 락 · Outbox · Kafka</sub>
     </td>
     <td width="33%" valign="top" align="center">
       <a href="https://github.com/Yong-B/Murder-Help"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Yong-B&repo=Murder-Help&bg_color=30,5B42F3,38BDF8&title_color=ffffff&text_color=ffffff&icon_color=ffffff&hide_border=true&border_radius=12" width="100%" /></a>
       <br/><b>🔍 Murder-Help</b><br/>
       <sub>인증 · 회원 · 리뷰</sub><br/>
-      <sub>로그인 · 회원 등급 · 상품 리뷰</sub>
+      <sub>JWT · 회원 등급 정합성 · 행 잠금</sub>
     </td>
     <td width="33%" valign="top" align="center">
       <a href="https://github.com/Yong-B/commerce-payment"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Yong-B&repo=commerce-payment&bg_color=30,5B42F3,38BDF8&title_color=ffffff&text_color=ffffff&icon_color=ffffff&hide_border=true&border_radius=12" width="100%" /></a>
