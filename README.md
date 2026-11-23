@@ -35,12 +35,7 @@
       <sub>인증 · 회원 · 리뷰</sub><br/>
       <sub>JWT · 회원 등급 정합성 · 행 잠금</sub>
     </td>
-    <td width="33%" valign="top" align="center">
-      <a href="https://github.com/Yong-B/commerce-payment"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Yong-B&repo=commerce-payment&bg_color=30,5B42F3,38BDF8&title_color=ffffff&text_color=ffffff&icon_color=ffffff&hide_border=true&border_radius=12" width="100%" /></a>
-      <br/><b>💳 commerce-payment</b><br/>
-      <sub>결제 · 웹훅</sub><br/>
-      <sub>PortOne V2 · 결제 상태 관리</sub>
-    </td>
+  
   </tr>
 </table>
 
